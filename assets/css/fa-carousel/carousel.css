@@ -1,0 +1,134 @@
+/**
+ * A custom carousel with right side navigations
+ *
+ * Made by @aircatcher
+ * https://github.com/aircatcher
+ */
+
+/**
+ * CAROUSEL WRAPPER
+ */
+ .carousel-wrapper
+ {
+     position: relative;
+     /* margin-top: 79px */
+ }
+ 
+ /**
+  * CAROUSEL CONTAINER
+  */
+ .carousel-container
+ {
+     position: relative;
+     height: 100vh;
+     font-family: helvetica, sans-serif;
+     font-size: 50px;
+     overflow: hidden
+ }
+ .carousel-content
+ {
+     margin: 0;
+     padding: 0
+ }
+ .carousel-content li
+ {
+     font-size: 100px;
+     margin: 0;
+     padding: 0;
+     width: 100%;
+     list-style: none;
+     text-align: center
+ }
+  
+ /**
+  * CAROUSEL ACTIVE
+  */
+ .active li
+ {
+     position: absolute;
+     top: 0;
+ 
+     pointer-events: none;
+     opacity: 0;
+     transform: skew(20deg);
+     transition: 0.8s;
+ }
+ .active li.current
+ {
+     top: 0;
+ 
+     pointer-events: auto;
+     opacity: 1;
+     transform: skew(0deg);
+     transition: 0.8s;
+ }
+  
+  /**
+   * CAROUSEL BUTTONS
+   */
+ .active .c-button-direct
+ {
+     position: absolute;
+     top: 0;
+     right: 0;
+     z-index: 10;
+     margin: 50vh 0 0 0
+ }
+ /* .active .c-button-l
+ {
+     position: relative;
+     z-index: 10;
+     margin: 50vh 0 0 0
+ }
+ .active .c-button-r
+ {
+     position: absolute;
+     z-index: 10;
+     top: 0;
+     right: 0;
+     margin: 50vh 0 0 0
+ } */
+ .c-prev, .c-next, .c-hr
+ {
+     background-color: transparent
+ }
+ .c-hr > hr
+ {
+     margin-top: 0.6rem;
+     margin-bottom: 0.6rem;
+ 
+     transition: all 0.25s ease;
+     -o-transition: all 0.25s ease;
+     -ms-transition: all 0.25s ease;
+     -moz-transition: all 0.25s ease;
+     -webkit-transition: all 0.25s ease;
+ }
+ .c-hr.active > hr
+ {
+     border-top: 2px solid white
+ }
+ 
+ .carousel-container > .c-button-direct > button.c-hr
+ {
+     display: block;
+     margin-left: auto;
+     border: none;
+     width: 45px;
+ 
+     transition: all 0.25s ease;
+     -o-transition: all 0.25s ease;
+     -ms-transition: all 0.25s ease;
+     -moz-transition: all 0.25s ease;
+     -webkit-transition: all 0.25s ease;
+ }
+ .carousel-container > .c-button-direct > button.active
+ {
+     display: block;
+     margin-left: auto;
+     width: 70px
+ }
+ .offscreen
+ {
+     position: absolute;
+     left: -2000px
+ }
